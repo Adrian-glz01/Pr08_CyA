@@ -5,8 +5,3 @@
  * Práctica 8: Grammar simulation
  */
 
-#include <iostream>
-#include <string>
-#include <cstring>
-
-void Usage(int, char*);

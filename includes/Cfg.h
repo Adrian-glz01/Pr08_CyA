@@ -5,8 +5,12 @@
  * Práctica 8: Grammar simulation
  */
 
-#include <iostream>
-#include <string>
-#include <cstring>
-
-void Usage(int, char*);
+class Cfg{
+ public:
+ 
+ private:
+ //alfabeto
+ //conjunto de terminos no terminales
+ //estado de arranque 
+ //producciones 
+};
