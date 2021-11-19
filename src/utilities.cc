@@ -33,7 +33,14 @@ void Usage(int argc,char* argv[]) {
   }
 }
 
+/**
+ * @brief Print the chain in the output file.
+ * 
+ * @param std::string mychain 
+ * @param std::string out 
+ */
 void print_chain(std::string mychain, std::string out) {
-  std::ofstream os(out);
-  os << mychain << " ";
+  std::ofstream os;
+  os.open(out, std::ofstream::app);
+  os << " => " << mychain;
 }

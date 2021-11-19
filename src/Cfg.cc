@@ -21,7 +21,17 @@ Cfg::Cfg( Alphabet alphabet, std::set<Symbols> non_terminal_set, Symbols initial
   productions_rules_set_ = productions_rules_set;
 }
 
+/**
+ * @brief Algorithm to build a chang by the productions of the grammar
+ * 
+ * @param std::vector<std::pair<Chain,_int>> derivations 
+ * @param std::string output_file 
+ */
 void Cfg::BuildChainByGrammar(std::vector<std::pair<Chain, int>> derivations, std::string output_file) {
+  std::ofstream os;
+  os.open(output_file.c_str(), std::ofstream::trunc);
+  os << initial_symbol_.get_symbols();
+  os.close();
   std::string Chain = initial_symbol_.get_symbols();
   for (auto deriv = 0; deriv < derivations.size(); deriv++) {
     for (auto productions = productions_rules_set_.begin(); productions != productions_rules_set_.end(); productions++) {

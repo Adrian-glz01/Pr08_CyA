@@ -87,4 +87,7 @@ int main(int argc,char* argv[]) {
   }
   Cfg grammar(alphabet, non_terminal_set, initial_symbol, productions_rules_set);
   grammar.BuildChainByGrammar(derivations_vec, output_file);
+  /*for (auto element: productions_rules_set) {
+    std::cout << element.first << ":" << element.second.first << " -> " << element.second.second << "\n";
+  }*/
 }
