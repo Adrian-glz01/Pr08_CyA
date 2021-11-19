@@ -16,7 +16,6 @@
 #include <string>
 #include <vector>
 #include <map>
-#include <regex>
 #include <fstream>
 #include <sstream>
 #include <unordered_set>

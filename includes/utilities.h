@@ -5,8 +5,7 @@
  * Práctica 8: Grammar simulation
  */
 
-#include <iostream>
-#include <string>
-#include <cstring>
 
-void Usage(int, char*);
+void Usage(int, char* argv[]);
+
+void print_chain(std::string, std::string);

@@ -5,12 +5,18 @@
  * Práctica 8: Grammar simulation
  */
 
-class Cfg{
+#include "alphabet.h"
+#include "symbols.h"
+#include "chain.h"
+#include "utilities.h"
+
+class Cfg {
  public:
- 
+  Cfg(Alphabet, std::set<Symbols>, Symbols,std::multimap<Chain, std::pair<int, Chain>>);
+  void BuildChainByGrammar(std::vector<std::pair<Chain, int>>, std::string);
  private:
- //alfabeto
- //conjunto de terminos no terminales
- //estado de arranque 
- //producciones 
+  Alphabet alphabet_;
+  std::set<Symbols> non_terminal_set_;
+  Symbols initial_symbol_;
+  std::multimap<Chain, std::pair<int, Chain>> productions_rules_set_;
 };

@@ -5,7 +5,7 @@
  * Práctica 8: Grammar simulation
  */
 
-#include "../includes/utilities.h"
+#include "../includes/Cfg.h"
 
 const std::string KError_message{
     "Fatal error! The execution of this programm is not correct.\n\
@@ -23,7 +23,7 @@ const std::string Khelp_message{
  *  @param char* argv[]
  *
  */
-void Usage(int argc, char* argv[]) {
+void Usage(int argc,char* argv[]) {
   if (argc == 1) {
     std::cout << KError_message << std::endl;
     exit(EXIT_SUCCESS);
@@ -31,4 +31,9 @@ void Usage(int argc, char* argv[]) {
     std::cout << Khelp_message << std::endl;
     exit(EXIT_SUCCESS);
   }
+}
+
+void print_chain(std::string mychain, std::string out) {
+  std::ofstream os(out);
+  os << mychain << " ";
 }
