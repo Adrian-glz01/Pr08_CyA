@@ -28,6 +28,8 @@ Cfg::Cfg( Alphabet alphabet, std::set<Symbols> non_terminal_set, Symbols initial
  * @param std::string output_file 
  */
 void Cfg::BuildChainByGrammar(std::vector<std::pair<Chain, int>> derivations, std::string output_file) {
+  std::vector<std::string> parsed_chains;
+  derivations_belong_nonterminalset(derivations, non_terminal_set_);
   std::ofstream os;
   os.open(output_file.c_str(), std::ofstream::trunc);
   os << initial_symbol_.get_symbols();
@@ -39,8 +41,10 @@ void Cfg::BuildChainByGrammar(std::vector<std::pair<Chain, int>> derivations, st
         if (derivations[deriv].second == productions->second.first) {
           Chain.replace(Chain.find(derivations[deriv].first.get_chain()), derivations[deriv].first.get_chain().length(), productions->second.second.get_chain());
           print_chain(Chain, output_file);
+          parsed_chains.emplace_back(Chain);
         }
       }
     }
   }
+  chain_belong_alphabet(parsed_chains,alphabet_);
 }
